@@ -13,6 +13,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import Header from './Header';
 
 
 
@@ -50,6 +51,8 @@ function Navbar() {
 
 
   return (
+   <>
+   <Header/>
     <AppBar position="static" className='bg-black'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -83,6 +86,7 @@ function Navbar() {
         </Toolbar>
       </Container>
     </AppBar>
+   </>
   );
 }
 export default Navbar;
