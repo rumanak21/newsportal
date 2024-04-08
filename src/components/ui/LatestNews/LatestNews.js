@@ -1,12 +1,11 @@
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import topNews from "@/assets/top-news.png"
-import topNews2 from "@/assets/top-news2.png"
+import Link from 'next/link';
 import Image from 'next/image';
 import { getAllNews } from '@/utils/getAllNews';
 
 const LatestNews = async () => {
     const { data } = await getAllNews()
-    
+
     return (
 
         <Box>
@@ -29,8 +28,9 @@ const LatestNews = async () => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
+                    <Link href={`/${data[0].category.toLowerCase()}/${data[0]._id}`}>
+                        <Button size="small">Learn More</Button>
+                    </Link>
                 </CardActions>
             </Card>
             <Grid className='mt-5' container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
@@ -55,16 +55,18 @@ const LatestNews = async () => {
                                     <Typography gutterBottom >
                                         {news.title}
                                     </Typography>
-                                    <Typography gutterBottom className='my-3'>
+                                    <Typography gutterBottom className='my-2'>
                                         By {news.author.name} - {news.author.published_date}
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
-                                        {news.details.length > 200 ? news.details.slice(0, 300) + "...." : news.details}
+                                        {news.details.length > 200 ? news.details.slice(0, 200) + "...." : news.details}
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small">Share</Button>
-                                    <Button size="small">Learn More</Button>
+
+                                    <Link href={`/${news.category.toLowerCase()}/${news._id}`}>
+                                        <Button size="small">Learn More</Button>
+                                    </Link>
                                 </CardActions>
                             </Card>
                         </Grid>

@@ -1,5 +1,5 @@
 import { getCategoryNews } from '@/utils/getCategoryNews';
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import {  Card,  CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,6 +7,7 @@ import Link from 'next/link';
 const DynamicNewsPage = async ({ params, searchParams }) => {
 
     const { data } = await getCategoryNews(searchParams.category)
+    
 
     return (
         <div className='my-5'>
@@ -40,10 +41,7 @@ const DynamicNewsPage = async ({ params, searchParams }) => {
                                             {news.details.length > 200 ? news.details.slice(0, 200) + "...." : news.details}
                                         </Typography>
                                     </CardContent>
-                                    <CardActions>
-                                        <Button size="small">Share</Button>
-                                        <Button size="small">Learn More</Button>
-                                    </CardActions>
+                                
                                 </Card>
                             </Link>
                         </Grid>

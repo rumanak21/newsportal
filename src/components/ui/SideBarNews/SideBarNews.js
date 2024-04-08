@@ -2,34 +2,40 @@ import { Box, Button, ButtonBase, Card, CardActions, CardContent, CardMedia, Div
 import Image from 'next/image';
 import sidebarNews from "@/assets/side-top-news.png"
 import sideBottomImage from "@/assets/side-bottom-img.png"
+import { getAllNews } from '@/utils/getAllNews';
+import Link from 'next/link';
 
-const SideBarNews = () => {
+const SideBarNews = async() => {
+    const { data } = await getAllNews()
     return (
         <>
             <Box>
                 <Card className='my-5'>
                     <CardMedia>
-                        <Image src={sidebarNews} width={800} alt='top-news' />
+                        <Image src={data[1].thumbnail_url} width={800} height={300} alt='top-news' />
                     </CardMedia>
                     <CardContent>
                         <p className='px-2 my-5 rounded w-[100px] bg-red-500 text-white'>
-                            Technology
+                        {data[1].category}
                         </p>
                         <Typography gutterBottom variant="h5" component="div">
-                            Bitcoin Climbs as Elon Musk Says Tesla Likely to Accept it Again
+                        {data[1].title}
                         </Typography>
                         <Typography gutterBottom className='my-3'>
-                            By Rumana K. - April 03 2024
+                        By {data[1].author.name} - {data[1].author.published_date}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti totam culpa quidem optio facilis, iste voluptates laborum voluptatem minus saepe?
+                        {data[1].details.length > 200 ? data[1].details.slice(0, 200) + "...." : data[1].details}
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small">Share</Button>
+                        <Link href={`/${data[1].category.toLowerCase()}/${data[1]._id}`}>
                         <Button size="small">Learn More</Button>
+                        </Link>
                     </CardActions>
-                </Card>
+
+                    </Card>
+                
                 <Box>
                     <Divider className='my-5'></Divider>
                     <Grid container spacing={2}>
