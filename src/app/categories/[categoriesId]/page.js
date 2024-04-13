@@ -13,7 +13,7 @@ const DynamicNewsPage = async ({ params, searchParams }) => {
         <div className='my-5'>
             <h1>Total <span className='font-bold'>{searchParams.category}</span> news: {data.length}</h1>
 
-            <Grid className='mt-5' container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Grid className='mt-5' columns={{ xs: 4, sm: 8, md: 12 }} container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 {
                     data.map(news => (
                         <Grid key={news.id} item xs={6}>

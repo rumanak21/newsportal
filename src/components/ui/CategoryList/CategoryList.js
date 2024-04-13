@@ -8,14 +8,14 @@ const CategoryList = async () => {
     const { data: allCategories } = await getAllCategories()
     // console.log(allCategories)
     return (
-        <Box className="mt-5 bg-gray-100 px-5 py-2">
+        <Box className=" mt-5 bg-gray-100 px-5 py-2">
             <Typography variant="h6" >Categories</Typography>
             <Divider />
-            <Stack rowGap={1} sx={{ mt: 2.5 }}>
+            <Stack  rowGap={1} sx={{ mt: 2.5 }}>
                 {
                     allCategories.map((category) => (
-                        <Button variant="outlined" key={category.id}>
-                            <Link href={`/categories/news?category=${category.title.toLowerCase()}`}>{category.title}</Link>
+                        <Button  variant="outlined" key={category.id}>
+                            <Link className="max-sm:w-auto" href={`/categories/news?category=${category.title.toLowerCase()}`}>{category.title}</Link>
                         </Button>
                     ))
                 }
