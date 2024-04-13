@@ -56,7 +56,9 @@ function Navbar() {
     <AppBar position="static" className='bg-black'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <Link className='w-full' href="/">
           <Image src={logo} alt='logo' />
+          </Link>
           <Box className="w-full text-center">
             {navItems.map((item) => (
               <Link key={item} href={item.pathName}>
@@ -70,16 +72,16 @@ function Navbar() {
             sx={{ "& svg": { color: "white" }, 
             }}>
               <IconButton>
-                <FacebookIcon />
+                <Link  href="http://facebook.com"><FacebookIcon /></Link>
               </IconButton>
               <IconButton>
-                <InstagramIcon />
+                <Link href="https://www.instagram.com/"><InstagramIcon /></Link>
               </IconButton>
               <IconButton>
-                <TwitterIcon />
+                <Link href="https://twitter.com/"><TwitterIcon /></Link>
               </IconButton>
               <IconButton>
-                <YouTubeIcon />
+                <Link href="https://www.youtube.com/"><YouTubeIcon /></Link>
               </IconButton>
             </Stack>
           </Box>
