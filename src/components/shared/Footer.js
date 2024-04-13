@@ -43,16 +43,16 @@ const Footer = () => {
                 }} className="w-full text-center">
 
                     <IconButton>
-                        <FacebookIcon />
+                        <Link href="http://facebook.com"><FacebookIcon /></Link>
                     </IconButton>
                     <IconButton>
-                        <InstagramIcon />
+                        <Link href="https://www.instagram.com/"><InstagramIcon /></Link>
                     </IconButton>
                     <IconButton>
-                        <TwitterIcon />
+                        <Link href="https://twitter.com/"><TwitterIcon /></Link>
                     </IconButton>
                     <IconButton>
-                        <YouTubeIcon />
+                        <Link href="https://www.youtube.com/"><YouTubeIcon /></Link>
                     </IconButton>
 
                 </Box>

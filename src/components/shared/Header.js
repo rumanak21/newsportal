@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <Box className="w-full my-5">
             <Container>
-                <Image src={headingImage} width={500} height={500} className='mx-auto' alt='Heading Image'/>
+                <Image src={headingImage} width={500} height={500} className=' mx-auto' alt='Heading Image'/>
                 <Typography className='my-2' color="gray" variant='body2' textAlign="center" >
                     Journalism Without Fear or favour
                 </Typography>

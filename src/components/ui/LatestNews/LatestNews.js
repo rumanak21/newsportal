@@ -33,11 +33,11 @@ const LatestNews = async () => {
                     </Link>
                 </CardActions>
             </Card>
-            <Grid className='mt-5' container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Grid className='mt-5' columns={{ xs: 4, sm: 8, md: 12 }} container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 {
                     data.slice(0, 4).map((news) => (
                         <Grid key={news._id} item xs={6}>
-                            <Card className='my-5'>
+                            <Card className='my-5 '>
                                 <CardMedia
                                     sx={{
                                         "& img": {

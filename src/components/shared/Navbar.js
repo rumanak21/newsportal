@@ -55,13 +55,13 @@ function Navbar() {
    <Header/>
     <AppBar position="static" className='bg-black'>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Link className='w-full' href="/">
+        <Toolbar className='max-sm:flex max-sm:flex-col max-sm:items-center' disableGutters>
+          <Link className='w-full max-sm:w-40 max-sm:mt-5' href="/">
           <Image src={logo} alt='logo' />
           </Link>
           <Box className="w-full text-center">
             {navItems.map((item) => (
-              <Link key={item} href={item.pathName}>
+              <Link className='max-sm:flex max-sm:justify-center' key={item} href={item.pathName}>
                 <Button className="text-white">{item.route}</Button>
               </Link>
             ))}
